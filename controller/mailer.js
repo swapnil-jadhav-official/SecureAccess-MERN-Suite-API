@@ -24,8 +24,8 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-        user: process.env.EMAIL, // generated ethereal user
-        pass: process.env.PASSWORD, // generated ethereal passwor
+        user: "username",
+        pass: "pass",
     }
 });
 
@@ -62,7 +62,7 @@ export const registerMail = async (req, res) => {
     var emailBody = MailGenerator.generate(email);
 
     let message = {
-        from : process.env.EMAI,
+        from : "username",
         to: userEmail,
         subject : subject || "Signup Successful",
         html : emailBody
